@@ -1,0 +1,13 @@
+# Python venv
+cocvenv/
+__pycache__/
+*.pyc
+
+# IDE/project files
+.vscode/
+.idea/
+*.swp
+
+# Data & models (optional)
+data/
+models/

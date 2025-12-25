@@ -46,3 +46,5 @@ def zoom_out_camera(scrolls=10, amount=-500, delay=0.1):
     for _ in range(scrolls):
         pyautogui.scroll(amount)
         time.sleep(delay)
+
+# def hover_mouse_on()

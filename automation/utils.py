@@ -41,8 +41,10 @@ def click_element(coords, description):
         print(f"{description} not found.")
         return False
 
-def zoom_out_camera(scrolls=10, amount=-500, delay=0.1):
-    """Scrolls the mouse wheel to zoom out the game camera."""
+def zoom_camera(scrolls=10, amount=-500, delay=0.1):
+    """Scrolls the mouse wheel to zoom out the game camera.
+        amount: + -> zoom in, - -> zoom out """
+
     for _ in range(scrolls):
         pyautogui.scroll(amount)
         time.sleep(delay)

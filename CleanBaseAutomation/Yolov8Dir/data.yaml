@@ -1,0 +1,17 @@
+# Dataset root directory
+path: F:/cocRL/CleanBaseAutomation/Yolov8Dir/RawResized
+
+# Image directories (relative to path)
+train: images/train
+val: images/train   # temporary reuse
+
+# Class names
+names:
+  0: fallen_trunk
+  1: gem_box
+  2: mushroom
+  3: tree_1
+  4: tree_2
+  5: trunk_1
+  6: trunk_2
+  7: bush

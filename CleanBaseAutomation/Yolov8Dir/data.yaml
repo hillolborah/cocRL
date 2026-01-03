@@ -3,7 +3,7 @@ path: F:/cocRL/CleanBaseAutomation/Yolov8Dir/RawResized
 
 # Image directories (relative to path)
 train: images/train
-val: images/train   # temporary reuse
+val: images/val   
 
 # Class names
 names:

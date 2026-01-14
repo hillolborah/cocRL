@@ -1,6 +1,15 @@
 import pyautogui
 import time
+
+
+import sys
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT))
+
 from automation.utils import zoom_camera
+
 
 print("Starting script")
 time.sleep(3)
@@ -11,7 +20,7 @@ time.sleep(1)
 
 print("Eagle Artillery anchor point")
 eagle_art_coords = pyautogui.locateCenterOnScreen(
-    r'F:\cocRL\TempDir\EA3.png', confidence=0.75
+    r'F:\cocRL\TempDir\EA4.png', confidence=0.75
 )
 print(eagle_art_coords)
 
@@ -45,7 +54,7 @@ print("SegI end, re-detect and reanchor Eagle Artillery")
 
 time.sleep(0.5)
 eagle_art_coords = pyautogui.locateCenterOnScreen(
-    r'F:\cocRL\TempDir\EA3.png', confidence=0.75
+    r'F:\cocRL\TempDir\EA4.png', confidence=0.75
 )
 
 print("Re-detected EA:", eagle_art_coords)

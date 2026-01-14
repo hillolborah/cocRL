@@ -25,8 +25,8 @@ def pct_change(curr, prev):
 
 # ------------------ Paths ------------------
 
-CURRENT_RUN = r"F:\cocRL\CleanBaseAutomation\Yolov8Dir\runs\detect\yolov8m_vegetation_v8\results.csv"
-PREVIOUS_RUN = r"F:\cocRL\CleanBaseAutomation\Yolov8Dir\runs\detect\yolov8m_vegetation_v7\results.csv"
+CURRENT_RUN = r"F:\cocRL\CleanBaseAutomation\Yolov8Dir\runs\detect\yolo11n_vegetation_v9\results.csv"
+PREVIOUS_RUN = r"F:\cocRL\CleanBaseAutomation\Yolov8Dir\runs\detect\yolov8m_vegetation_v8\results.csv"
 
 # ------------------ Load Data ------------------
 

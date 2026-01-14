@@ -4,13 +4,13 @@ from pycocotools.coco import COCO
 # ---------------- CONFIG ----------------
 
 # COCO annotation file (CVAT export)
-COCO_JSON = r"CvatExport\coco_annotations\annotations\instances_default.json"
+COCO_JSON = r"CvatExport\val_coco_annotations\annotations\instances_Validation.json"
 
 # Dataset root
 DATASET_ROOT = r"RawResized"
 
-IMAGES_TRAIN = os.path.join(DATASET_ROOT, "images", "train")
-LABELS_TRAIN = os.path.join(DATASET_ROOT, "labels", "train")
+IMAGES_TRAIN = os.path.join(DATASET_ROOT, "images", "val")
+LABELS_TRAIN = os.path.join(DATASET_ROOT, "labels", "val")
 
 os.makedirs(LABELS_TRAIN, exist_ok=True)
 

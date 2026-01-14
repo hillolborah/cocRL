@@ -169,42 +169,58 @@ def main():
     #     name="yolov8m_vegetation_v7"
     # ) 
 
-    model = YOLO("runs/detect/yolov8m_vegetation_v7/weights/best.pt")
+    # model = YOLO("runs/detect/yolov8m_vegetation_v7/weights/best.pt")
+
+    # model.train(
+    #     data="data.yaml",
+    #     imgsz=896,
+    #     batch=6,
+    #     epochs=60,
+    #     patience=0,
+    #     device=0,
+    #     workers=8,
+    #     amp=True,
+    #     mosaic=0.6,
+    #     close_mosaic=10,
+    #     mixup=0.15,
+    #     copy_paste=0.2,
+    #     box=6.0,       
+    #     cls=1.1,       
+    #     dfl=1.0,
+    #     conf=0.001,
+    #     lr0=0.002,
+    #     lrf=0.0008,
+    #     warmup_epochs=3,
+    #     cache=False,
+    #     project="runs/detect",
+    #     name="yolov8m_vegetation_v8"
+    # )
+
+    model = YOLO("yolo11n.pt")
 
     model.train(
         data="data.yaml",
-
         imgsz=896,
         batch=6,
         epochs=60,
-
         patience=0,
         device=0,
         workers=8,
         amp=True,
-
-        # 🔥 STRONG regularization
         mosaic=0.6,
         close_mosaic=10,
         mixup=0.15,
         copy_paste=0.2,
-
-        # 🔑 Recall bias
-        box=6.0,        # ↓ box strictness
-        cls=1.1,        # ↑ class importance
+        box=6.0,       
+        cls=1.1,       
         dfl=1.0,
-
-        # 🔑 Lower confidence threshold training
         conf=0.001,
-
-        # LR stabilization
         lr0=0.002,
         lrf=0.0008,
         warmup_epochs=3,
-
         cache=False,
         project="runs/detect",
-        name="yolov8m_vegetation_v8"
+        name="yolo11n_vegetation_v9"
     )
 
 if __name__ == "__main__":

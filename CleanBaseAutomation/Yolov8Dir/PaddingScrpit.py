@@ -3,8 +3,8 @@ import os
 from pathlib import Path
 
 # CONFIG
-INPUT_DIR = "raw"
-OUTPUT_DIR = "RawResized"
+INPUT_DIR = "raw/raw_val"
+OUTPUT_DIR = r"F:/cocRL/CleanBaseAutomation/Yolov8Dir/RawResized/images/val"
 TARGET_W = 1280
 TARGET_H = 1280
 PAD_COLOR = (0, 0, 0)  # black

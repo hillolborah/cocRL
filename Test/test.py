@@ -17,7 +17,7 @@ import time
 time.sleep(3)
 
 matches = list(pyautogui.locateAllOnScreen(
-    r'F:\cocRL\TempDir\Bush1.png', confidence=1
+    r'F:\cocRL\TempDir\EA3.png', confidence=1
 ))
 
 print(matches)

@@ -1,7 +1,5 @@
 import pyautogui
 import time
-
-
 import sys
 from pathlib import Path
 
@@ -9,6 +7,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from automation.utils import zoom_camera
+from VegetationCv import clear_vegetation_segment
 
 
 print("Starting script")
@@ -48,7 +47,7 @@ zoom_camera(15, -500, 0.1)
 # Vegetation Logic here (BOTTOM HALF)
 print("Vegetation Logic")
 time.sleep(1)
-
+clear_vegetation_segment()
 
 print("SegI end, re-detect and reanchor Eagle Artillery")
 
@@ -80,6 +79,8 @@ zoom_camera(15, -500, 0.1)
 # Vegetation Logic here (TOP HALF)
 print("Vegetation Logic")
 time.sleep(1)
+clear_vegetation_segment()
 
 
 print("End")
+

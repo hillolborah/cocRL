@@ -6,11 +6,11 @@ import mss
 from ultralytics import YOLO
 
 MODEL_PATH = r"F:\cocRL\CleanBaseAutomation\Yolov8Dir\runs\detect\yolov8m_vegetation_v8\weights\best.pt"
-CONF_THRES = 0.4
+CONF_THRES = 0.8
 IOU_THRES = 0.5
 SETTLE_TIME = 1.0      
 CLICK_DELAY = 1.0
-MAX_ITERS = 20
+MAX_ITERS = 1
 
 
 model = YOLO(MODEL_PATH)
@@ -27,6 +27,7 @@ VEGETATION_CLASSES = {
 }
 
 
+#Multi monitor setup
 sct = mss.mss()
 MONITOR = sct.monitors[2]  
 
@@ -86,7 +87,7 @@ def clear_vegetation_segment(max_iters=MAX_ITERS):
         vegetation_boxes.sort(key=lambda b: int(b.xyxy[0][1]))
 
  
-        print("Start Iteration...")
+        print("Start Clicking...")
         for box in vegetation_boxes:
             x1, y1, x2, y2 = map(int, box.xyxy[0])
 
@@ -102,8 +103,11 @@ def clear_vegetation_segment(max_iters=MAX_ITERS):
             abs_y = MONITOR["top"] + cy
 
             print(f"Clicking vegetation at ({abs_x}, {abs_y})")
+            print(f"Class: {model.names[int(box.cls[0])]}")
             pyautogui.moveTo(abs_x, abs_y, duration=0.15)
             pyautogui.click()
+            #Remove logic goes here for prod
+            print("Remove logic placeholder")
             time.sleep(CLICK_DELAY)
 
         time.sleep(0.4)
@@ -111,17 +115,17 @@ def clear_vegetation_segment(max_iters=MAX_ITERS):
     print("Max iterations reached — exiting segment")
 
 ###Test Run Function
-def main():
-    print("Starting VegetationCv standalone mode")
+# def main():
+#     print("Starting VegetationCv standalone mode")
 
-    time.sleep(5)
+#     time.sleep(3)
 
-    pyautogui.moveRel(10, 0, duration=0.2)
-    pyautogui.moveRel(-10, 0, duration=0.2)
+#     pyautogui.moveRel(10, 0, duration=0.2)
+#     pyautogui.moveRel(-10, 0, duration=0.2)
 
-    print("Running vegetation clearing on visible screen area")
-    clear_vegetation_segment()
+#     print("Running vegetation Clicking on visible screen area")
+#     clear_vegetation_segment()
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

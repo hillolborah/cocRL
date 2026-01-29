@@ -27,7 +27,7 @@ VEGETATION_CLASSES = {
 }
 
 
-#Multi monitor setup
+#Multi monitor setup, if single monitor, set sct.monitors[1]
 sct = mss.mss()
 MONITOR = sct.monitors[2]  
 
@@ -89,6 +89,7 @@ def clear_vegetation_segment(max_iters=MAX_ITERS):
  
         print("Start Clicking...")
         for box in vegetation_boxes:
+            #Note: coordinates system is applicable to two monitor setup with coc running on secondary monitor.
             x1, y1, x2, y2 = map(int, box.xyxy[0])
 
             cx = (x1 + x2) // 2
@@ -99,8 +100,13 @@ def clear_vegetation_segment(max_iters=MAX_ITERS):
                 continue
             clicked_centers.add(key)
 
+            #Dual monitor absolute coordinates
             abs_x = MONITOR["left"] + cx
             abs_y = MONITOR["top"] + cy
+
+            #Single monitor setup
+            # abs_x = cx
+            # abs_y = cy
 
             print(f"Clicking vegetation at ({abs_x}, {abs_y})")
             print(f"Class: {model.names[int(box.cls[0])]}")

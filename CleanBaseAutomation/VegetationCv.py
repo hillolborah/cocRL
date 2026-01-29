@@ -22,6 +22,8 @@ VEGETATION_CLASSES = {
     "fallen_trunk",
     "trunk_1",
     "trunk_2",
+    "gem_box",
+    "mushroom"
 }
 
 
